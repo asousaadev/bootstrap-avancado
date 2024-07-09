@@ -27,8 +27,14 @@
             left: 0;
             background-color: #fff;
         }
+
+        img{
+            background-color: #000066;
+            align-items: center;
+            max-width: 20px;
+        }
     </style>
-</head>
+    </header>
 
 
 <body>
@@ -55,6 +61,7 @@
                         </li>
                     </ul>
                 </nav>
+                <button id="btn-checar-emails" type="button" class="btn btn-warning">Checar caixa de mensagens</button>
             </div>
         </div>
     </header>
@@ -66,14 +73,16 @@
             <h2>Produtos</h2>
             <div class="container">
                 <nav class="nav nav-tabs">
-                    <button data-bs-toggle="tab" data-bs-target="#aba1" class="nav-link active" type="button">Eletrônico</button>
-                    <button data-bs-toggle="tab" data-bs-target="#aba2" class="nav-link" type="button">Moda masculina</button>
-                    <button data-bs-toggle="tab" data-bs-target="#aba3" class="nav-link" type="button">Moda feminina</button>
+                    <button data-bs-toggle="tab" data-bs-target="#aba1" class="nav-link active"
+                        type="button">Eletrônico</button>
+                    <button data-bs-toggle="tab" data-bs-target="#aba2" class="nav-link" type="button">Moda
+                        masculina</button>
+                    <button data-bs-toggle="tab" data-bs-target="#aba3" class="nav-link" type="button">Moda
+                        feminina</button>
                 </nav>
                 <div class="tab-content">
                     <div class="tab-pane active" id="aba1">
                         Conteúdo da aba Eletrônico
-                       
                     </div>
                     <div class="tab-pane" id="aba2">
                         Conteúdo da aba da moda masculina
@@ -86,32 +95,43 @@
         </section>
         <section id="promocoes">
             <h2>Promoções</h2>
-            <div class="container">
-                <div class="col-4">
-                    <div class="card text-bg-dark">
-                        <img src="img/hussan-amir-ZB91R7l7j8Q-unsplash.jpg" alt="">
-                        <div class="card-img-overlay">
-                            <h4 class="card-title">Título do Card</h4>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, quasi.
-
-                            </p>
-                            <a href="#" class="btn btn-primary">Leia mais</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </section>
         <section id="contatos">
             <h2>Contatos</h2>
         </section>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div data-bs-autohide="false" id="mensagens-alerta" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">         
+                    <header class="toast-header">
+                        <img src="img/logoP3energia.png" class="rounded me-2" alt="...">
+                        <strong class="me-auto">Importante</strong>
+                        <!-- <small>11 mins ago</small> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </header>
+                    <div class="toast-body">
+                        Você possui 10 mensagem não lidas.
+                        <!-- <button data-bs-dismiss="toast" class="btn btn-danger"> -->
+                            <!-- Descartar -->
+                        </button>
+                    </div>
+            </div>
+        </div>
     </div>
 
 
-
-
     <script src="/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        const ativadorToast = document.getElementById('btn-checar-emails');
+        const mensagem = document.getElementById('mensagens-alerta')
+        if (ativadorToast) {
+            ativadorToast.addEventListener('click', function () {
+                const toast = new bootstrap.Toast(mensagem)
+                toast.show()
+            })
+        }
+
+
+
+    </script>
 </body>
 
 </html>
