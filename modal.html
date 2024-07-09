@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/lib/css/bootstrap/bootstrap.min.css">
 </head>
 <body>
-    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-exemplo">
         Abrir modal
     </button>
-    <div class="modal" id="modal" data-bs-backdrop="static">
+    <div class="modal" id="modal-exemplo" data-bs-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -31,13 +31,6 @@
     
 
     <script src="/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMcontentLoaded', function(){
-            const modalExemplo = new bootstrap.Modal('#modal');
-            setTimeout(function(){
-                modalExemplo.show();
-            })
-        })
-    </script>
+
 </body>
 </html>
